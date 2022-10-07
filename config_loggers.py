@@ -1,10 +1,11 @@
 import logging
 from config import LOGGER_API_PATH, LOGGER_FORMAT
-import app as app
+
+
+# import app as app
 
 
 def config(app):
-
     api_logger = logging.getLogger("api_logger")
     api_logger.setLevel(logging.DEBUG)
 
