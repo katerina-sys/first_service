@@ -1,0 +1,7 @@
+pip==22.2.2
+setuptools==65.4.1
+wheel==0.37.1
+flask==2.2.2
+werkzeug==2.2.2
+marshmallow==3.18.0
+gunicorn==20.1.0
