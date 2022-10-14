@@ -1,9 +1,11 @@
+import jsonify
 from flask import Blueprint, render_template, current_app, request
 from werkzeug.exceptions import abort
 
 from bp_posts.dao.comment_dao import CommentDAO
 from bp_posts.dao.post_dao import PostDAO
 from config import DATA_PATH_POST, DATA_PATH_COMMENTS
+from db import db
 
 # Создаем блупринт
 bp_posts = Blueprint("bp_posts", __name__, template_folder="templates")
@@ -53,3 +55,16 @@ def page_search_posts():
     else:
         posts = post_dao.search_for_posts(s)
     return render_template("search.html", s=s, posts=posts, posts_len=len(posts))
+
+
+@bp_posts.route('/test_db')
+def test_db():
+    result = db.session.execute(
+        'SELECT1'
+    ).scalar()
+
+    return jsonify(
+        {
+            'result': result,
+        }
+    )
