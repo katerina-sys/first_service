@@ -5,7 +5,7 @@ services:
     build: .
     image: katerinasys/skyprohosting1:master-3250837485
     ports:
-      - "8080:25000"
+      - "80:25000"
     environment:
       - DB_PASSWORD=db_password
       - DB_USER=db_user
